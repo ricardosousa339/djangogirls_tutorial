@@ -1,5 +1,7 @@
 <html>
     <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <title>Blog Django Girls</title>
     </head>
     <body>
@@ -10,8 +12,8 @@
         {% for post in posts %}
 
         <div>
-            <p>publicado: {{post.published_date}}</p>
             <h2><a href="">{{post.title}}</a></h2>
+            <p>publicado: {{post.published_date}}</p>
             <p>{{ post.text | linebreaksbr }}</p>
         </div>
         {% endfor %}

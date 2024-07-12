@@ -5,6 +5,17 @@ body{
     background-color: #005499;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+height: 10%;
+
+}
+
+.page{
+    height: 100vh;
+
+}
+.list{
+overflow-y: scroll;
+    height: 90%
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -14,6 +25,7 @@ body{
 }
 
 .content {
+
     margin-left: 40px;
 }
 
@@ -32,6 +44,7 @@ h2, h3, h4, h5{
 
 .save {
     float: right;
+    
 }
 
 .post-form textarea, .post-form input {

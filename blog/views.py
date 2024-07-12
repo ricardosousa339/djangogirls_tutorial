@@ -16,7 +16,7 @@ def post_detail(request, pk):
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
-        if(form.is_valid()):
+        if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
 
@@ -36,6 +36,8 @@ def post_edit(request, pk):
 
             post.save()
             return redirect('post_detail', pk=post.pk)
+
+                
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -49,3 +51,9 @@ def post_publish(request, pk):
     if request.method == 'POST':
         post.publish()
     return redirect('post_detail', pk=pk)
+
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method=='POST':
+        post.delete()
+    return redirect('post_list')
